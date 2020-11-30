@@ -50,16 +50,15 @@ module.exports = {
 
   // Allow embedding responsive images
   // {% image "mountains.jpeg", "Picture of someone on top of a mountain", "My image caption", "my-class" %}
-  image: async (
-    src,
-    alt,
-    title,
-    className,
-    lazy = true,
-    sizes = defaultSizesAttr
-  ) => {
-    const extension = path.extname(src).slice(1).toLowerCase()
-    const fullSrc = isFullUrl(src) ? src : `./src/assets/images/${src}`
+  image: async (options) => {
+    options.lazy = options.lazy || true
+    options.sizes = options.sizes || defaultSizesAttr
+
+    console.log(options)
+    const extension = path.extname(options.src).slice(1).toLowerCase()
+    const fullSrc = isFullUrl(options.src)
+      ? options.src
+      : `./src/assets/images/${options.src}`
 
     let stats
     try {
@@ -84,20 +83,20 @@ module.exports = {
           (image) =>
             `<source type="image/${image[0].format}" srcset="${image
               .map((entry) => `${entry.url} ${entry.width}w`)
-              .join(', ')}" sizes="${sizes}">`
+              .join(', ')}" sizes="${options.sizes}">`
         )
         .join('\n')}
       <img
-        class="${className || ''}"
-        loading="${lazy ? 'lazy' : 'eager'}"
+        class="${options.className || ''}"
+        loading="${options.lazy ? 'lazy' : 'eager'}"
         src="${fallback.url}"
         width="${fallback.width}"
-        height="${fallback.height}" alt="${alt}">
+        height="${fallback.height}" alt="${options.alt}">
     </picture>`
-    return title
+    return options.title
       ? outdent({ newline: '' })`<figure>
           ${picture}
-          <figcaption>${markdown.renderInline(title)}</figcaption>
+          <figcaption>${markdown.renderInline(options.title)}</figcaption>
         </figure>`
       : picture
   },
