@@ -1,0 +1,31 @@
+---
+layout: default
+title: Hello world
+htmlClass: html
+bodyClass: body
+---
+<h1><span class="highlighted">Hello!</span>👋<br/><span class="highlighted">from Marcus</span></h1>
+
+{% image "me-square.jpg", "Me in black and white, looking studious and writing something." %}
+
+<svg width="0" height="0">
+  <filter id="chromabb">
+    <feColorMatrix type="matrix" 
+      result="red_"             
+      values="3 0 0 0 0
+              0 0 0 0 0 
+              0 0 0 0 0 
+              0 0 0 1 0"/>
+    <feOffset in="red_" dx="1" dy="-1" result="red"/>
+    <feColorMatrix type="matrix" 
+      in="SourceGraphic"             
+      result="blue_"             
+      values="0 0 0 0 0
+              0 2 0 0 0 
+              0 0 1 0 0 
+              0 0 0 1 0"/>
+    <feOffset in="blue_" dx="-1" dy="1" result="blue"/>    
+    <feBlend mode="screen" in="red" in2="blue"/>
+
+  </filter>
+</svg>
