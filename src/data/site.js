@@ -12,6 +12,6 @@ module.exports = {
   type: 'website',
   url: urlRoots[process.env.NODE_ENV],
   github: package.repository.url,
-  image: 'https://avatars3.githubusercontent.com/u/447956?s=400&v=4',
+  image: 'https://cdn.shopify.com/s/files/1/0176/3274/products/Pi-Zero-W-1_1000x.jpg',
   description: package.description,
 }
