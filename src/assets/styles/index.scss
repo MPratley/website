@@ -22,22 +22,32 @@ main {
   display: flex;
   flex-grow: 1;
   align-items: center;
+  justify-content: center;
+  flex-direction: column;
 
-  h1 {
-    position: relative;
-    left: 15%;
-    top: 2%;
-    z-index: 1;
+  .hero {
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+    height: 100%;
+    flex-direction: row;
 
-    .highlighted {
-      background-color: rgba(227, 227, 227, 0.5);
+    h1 {
+      position: relative;
+      left: 15%;
+      top: 2%;
+      z-index: 1;
+
+      .highlighted {
+        background-color: rgba(227, 227, 227, 0.5);
+      }
     }
-  }
 
-  img {
-    width: 20rem;
-    border-radius: 50%;
-    filter: url(#chromabb);
+    img {
+      width: 20rem;
+      border-radius: 50%;
+      filter: url(#chromabb);
+    }
   }
 }
 
