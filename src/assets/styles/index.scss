@@ -8,8 +8,15 @@ body {
   font-family: 'Courier New', Courier, monospace;
 }
 
-// A general comment that should be
-// stripped out in production
+h1 {
+  font-size: 3rem;
+  text-align: center;
+}
+
+p {
+  text-align: center;
+}
+
 body {
   color: $blue;
   background-color: $bg-body;
@@ -37,6 +44,7 @@ main {
       left: 15%;
       top: 2%;
       z-index: 1;
+      font-size: xx-large;
 
       .highlighted {
         background-color: rgba(227, 227, 227, 0.5);

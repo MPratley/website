@@ -24,17 +24,11 @@
     <link rel="stylesheet" href="{% webpack 'main.css' %}">
   </head>
   <body class="{{ bodyClass }}">
+    {% include 'page_partials/_nav.njk' %}
     <main>
       {{ content | safe }}
     </main>
-
-    <footer>
-      <p>
-        <a href="{{ site.github }}">{% icon "github" %}code</a>
-        |
-        Built <time datetime="{{ build.timestamp | formatISO }}">{{ build.timestamp | format("dd LLL yyyy") }}</time>
-      </p>
-    </footer>
+    {% include 'page_partials/_footer.njk' %}
     <script async="async" defer="defer" src="{% webpack 'main.js' %}"></script>
   </body>
 </html>
