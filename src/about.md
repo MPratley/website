@@ -7,7 +7,7 @@ bodyClass: body
 
 # Heya!
 
-My name's Marcus Pratley. I "do computers" (I'm told), with an academic specialism in neural networks, and a professional career in web development. 
+My name's Marcus Pratley. I "do computers" (I'm told), with an academic specialism in neural networks, and a professional career in web development. This is a test edit.
 
 I'm currently a:
 
